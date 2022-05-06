@@ -578,7 +578,12 @@ inputContainer.onsubmit = (e) => {
   (0,_modules_refresh_list_js__WEBPACK_IMPORTED_MODULE_3__["default"])(taskList, listContainer);
 };
 
-
+// clear button
+clearBtn.onclick = () => {
+  // console.log('clear');
+  taskList.clearCompleted();
+  (0,_modules_refresh_list_js__WEBPACK_IMPORTED_MODULE_3__["default"])(taskList, listContainer);
+};
 
 // On load
 (0,_modules_refresh_list_js__WEBPACK_IMPORTED_MODULE_3__["default"])(taskList, listContainer);
