@@ -1,6 +1,6 @@
 # To do list project
 
-To do list project allows users to add or remove tasks.
+To do list project allows users to add, delete or remove complete tasks.
 
 ## Built With
 
