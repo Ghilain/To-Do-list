@@ -17,13 +17,13 @@ describe('Testing Add Item', () => {
       const todo = new TaskList();
       todo.addTask('Practice', false, 1);
   
-      expect(todo.data[1].task).toEqual('Practice');
+      expect(todo.data[1]. description).toEqual('Practice');
     });
     it('Adding todo to return details property', () => {
       const todo = new TaskList();
       todo.addTask('Sleep', false, 2);
   
-      expect(todo.data[2].task).toBe('Sleep');
+      expect(todo.data[2]. description).toBe('Sleep');
     });
     it('Adding todo to return boolean', () => {
       const todo = new TaskList();
@@ -52,7 +52,7 @@ describe('Testing Remove Item', () => {
       todo.addTask('Read', false, 4);
       todo.removeTask(5);
   
-      expect(todo.data[4].details).toEqual('Read');
+      expect(todo.data[4].description).toEqual('Read');
     });
     it('Removing  todo from a multiple added todos which return length', () => {
       const todo = new TaskList();
@@ -65,7 +65,7 @@ describe('Testing Remove Item', () => {
     it('remove', () => {
       const todo = new TaskList();
       todo.removeTask(4);
-      expect(todo.data[4].details).toEqual('Lunch');
+      expect(todo.data[4].description).toEqual('Lunch');
     });
   });
   // testing for editing todo
@@ -74,22 +74,22 @@ describe('Test for Edit Todo', () => {
     it('Editing todo to return new details', () => {
       const todo = new TaskList();
       todo.addTask('Walking', false, 5);
-      todo.data[5].task = 'Brushing';
+      todo.data[5].description = 'Brushing';
   
-      expect(todo.data[5].task).toMatch('Brushing');
+      expect(todo.data[5].description).toMatch('Brushing');
     });
     it('Editing todo to return new details', () => {
       const todo = new TaskList();
-      todo.data[0].task = 'Praying';
+      todo.data[0].description = 'Praying';
   
-      expect(todo.data[0].task).toMatch('Praying');
+      expect(todo.data[0].description).toMatch('Praying');
     });
   
     it('Editing todo to return new index property', () => {
       const todo = new TaskList();
-      todo.data[1].index = 3;
+      todo.data[1].id = 3;
   
-      expect(todo.data[1].index).toEqual(3);
+      expect(todo.data[1].id).toEqual(3);
     });
   });
   

@@ -3,7 +3,7 @@ import isStorageAvailable from './local-storage-checker.js';
 
 const storageName = 'taskList';
 
-module.export  = class TaskList {
+export default class TaskList {
   constructor() {
     this.data = [];
     this.id = 1;
