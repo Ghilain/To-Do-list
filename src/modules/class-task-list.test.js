@@ -67,29 +67,9 @@ describe('Testing Remove Item', () => {
       todo.removeTask(4);
       expect(todo.data[4].description).toEqual('Lunch');
     });
+    
   });
-  // testing for editing todo
 
-describe('Test for Edit Todo', () => {
-    it('Editing todo to return new details', () => {
-      const todo = new TaskList();
-      todo.addTask('Walking', false, 5);
-      todo.data[5].description = 'Brushing';
-  
-      expect(todo.data[5].description).toMatch('Brushing');
-    });
-    it('Editing todo to return new details', () => {
-      const todo = new TaskList();
-      todo.data[0].description = 'Praying';
-  
-      expect(todo.data[0].description).toMatch('Praying');
-    });
-  
-    it('Editing todo to return new index property', () => {
-      const todo = new TaskList();
-      todo.data[1].id = 3;
-  
-      expect(todo.data[1].id).toEqual(3);
-    });
-  });
+
+
   

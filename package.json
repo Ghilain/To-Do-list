@@ -46,12 +46,12 @@
   },
   "jest": {
     "resetMocks": false,
-      "verbose": true,
-      "setupFiles": [
-        "jest-localstorage-mock"
-      ],
-        "transform": {
-          "^.+\\.[t|j]sx?$": "babel-jest"
-        }
-          }
+    "verbose": true,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  }
 }
