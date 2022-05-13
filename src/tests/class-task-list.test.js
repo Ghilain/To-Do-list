@@ -69,16 +69,77 @@ describe('Testing Remove Item', () => {
   });
 });
 
-describe('Editing a todo item when its clicked', () => {
-  test('edit a todo item when its clicked', () => {
+// testing for editing todo
+
+describe('Test for Edit Todo', () => {
+    it('Editing todo to return new details', () => {
+      const todo = new TaskList();
+      todo.addTask('Walking', false, 5);
+      todo.data[5].description = 'Brushing';
+  
+      expect(todo.data[5].description).toMatch('Brushing');
+    });
+    it('Editing todo to return new details', () => {
+      const todo = new TaskList();
+      todo.data[0].description = 'Praying';
+  
+      expect(todo.data[0].description).toMatch('Praying');
+    });
+  
+    it('Editing todo to return new index property', () => {
+      const todo = new TaskList();
+      todo.data[1].id = 3;
+  
+      expect(todo.data[1].id).toEqual(3);
+    });
+  });
+
+// Testing for updating todo booleans
+
+describe('Test for Upadate Todo Booleans', () => {
+  it('Updating todo to return boolean true', () => {
     const todo = new TaskList();
-    // eslint-disable-next-line consistent-return
-    const rename = (taskID, newTask) => {
-      const obj = this.data;
-      if (obj.id === taskID) {
-        return { ...obj, description: newTask };
-      }
-      expect(obj).toBe(todo.newTask);
-    };
+    todo.addTask('Watching', true, 6);
+    todo.data[6].completed = true;
+
+    expect(todo.data[6].completed).toBe(true);
+  });
+  it('Updating todo to return boolean false', () => {
+    const todo = new TaskList();
+    todo.data[5].completed = false;
+
+    expect(todo.data[5].completed).toEqual(false);
   });
 });
+
+// Testing for clearing all completed todo.
+describe('Test for Clear All Completed Todo', () => {
+  it('Test for remove todo with boolean true', () => {
+    const todo = new TaskList();
+    todo.addTask('Jogging', false, 8);
+    todo.clearCompleted();
+
+    expect(todo.data.length).toBe(5);
+  });
+  it('Test for remove todo with boolean true', () => {
+    const todo = new TaskList();
+    todo.addTask('Breakfast', true, 9);
+    todo.addTask('Laundry', true, 10);
+    todo.removeTask(4);
+    todo.addTask('Travelling', false, 11);
+    todo.clearCompleted();
+
+    expect(todo.data.length).toBe(5);
+  });
+  it('Test for remove todo with boolean true', () => {
+    const todo = new TaskList();
+    todo.addTask('Rafting', true, 12);
+    todo.removeTask(10);
+    todo.addTask('Cycling', true, 13);
+    todo.removeTask(12);
+    todo.clearCompleted();
+
+    expect(todo.data.length).toBe(5);
+  });
+});
+
