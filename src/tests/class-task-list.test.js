@@ -59,8 +59,8 @@ describe('Testing Remove Item', () => {
     todo.addTask('Pray', false, 5);
     todo.addTask('Lunch', false, 6);
     todo.removeTask(3);
-
     expect(todo.data).toHaveLength(6);
+  
   });
   it('remove', () => {
     const todo = new TaskList();
