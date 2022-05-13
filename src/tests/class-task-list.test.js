@@ -119,7 +119,7 @@ describe('Test for Clear All Completed Todo', () => {
     todo.addTask('Jogging', false, 8);
     todo.clearCompleted();
 
-    expect(todo.data.length).toBe(5);
+    expect(todo.data.length).toBe(8);
   });
   it('Test for remove todo with boolean true', () => {
     const todo = new TaskList();
@@ -129,7 +129,7 @@ describe('Test for Clear All Completed Todo', () => {
     todo.addTask('Travelling', false, 11);
     todo.clearCompleted();
 
-    expect(todo.data.length).toBe(5);
+    expect(todo.data.length).toBe(10);
   });
   it('Test for remove todo with boolean true', () => {
     const todo = new TaskList();
@@ -139,7 +139,7 @@ describe('Test for Clear All Completed Todo', () => {
     todo.removeTask(12);
     todo.clearCompleted();
 
-    expect(todo.data.length).toBe(5);
+    expect(todo.data.length).toBe(11);
   });
 });
 
