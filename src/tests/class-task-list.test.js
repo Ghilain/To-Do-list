@@ -68,3 +68,17 @@ describe('Testing Remove Item', () => {
     expect(todo.data[4].description).toEqual('Lunch');
   });
 });
+
+describe('Editing a todo item when its clicked', () => {
+  test('edit a todo item when its clicked', () => {
+    const todo = new TaskList();
+    // eslint-disable-next-line consistent-return
+    const rename = (taskID, newTask) => {
+      const obj = this.data;
+      if (obj.id === taskID) {
+        return { ...obj, description: newTask };
+      }
+      expect(obj).toBe(todo.newTask);
+    };
+  });
+});
